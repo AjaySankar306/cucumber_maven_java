@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="17.954" tests="13" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="17.837" tests="17" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\admin\AppData\Local\Temp\surefire9608112042429931306\surefirebooter-20250903102625361_3.jar C:\Users\admin\AppData\Local\Temp\surefire9608112042429931306 2025-09-03T10-26-25_053-jvmRun1 surefire-20250903102625361_1tmp surefire_0-20250903102625361_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\admin\AppData\Local\Temp\surefire16903333041928569734\surefirebooter-20250903113821476_3.jar C:\Users\admin\AppData\Local\Temp\surefire16903333041928569734 2025-09-03T11-38-21_061-jvmRun1 surefire-20250903113821476_1tmp surefire_0-20250903113821476_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\admin\cucumber_maven_java\RestAPI_Cucumber_TestNG_Demo\target\test-classes;C:\Users\admin\cucumber_maven_java\RestAPI_Cucumber_TestNG_Demo\target\classes;C:\Users\admin\.m2\repository\io\rest-assured\rest-assured\5.4.0\rest-assured-5.4.0.jar;C:\Users\admin\.m2\repository\org\apache\groovy\groovy\4.0.16\groovy-4.0.16.jar;C:\Users\admin\.m2\repository\org\apache\groovy\groovy-xml\4.0.16\groovy-xml-4.0.16.jar;C:\Users\admin\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\admin\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\admin\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\admin\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\admin\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\admin\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\admin\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\admin\.m2\repository\io\rest-assured\json-path\5.4.0\json-path-5.4.0.jar;C:\Users\admin\.m2\repository\org\apache\groovy\groovy-json\4.0.16\groovy-json-4.0.16.jar;C:\Users\admin\.m2\repository\io\rest-assured\rest-assured-common\5.4.0\rest-assured-common-5.4.0.jar;C:\Users\admin\.m2\repository\io\rest-assured\xml-path\5.4.0\xml-path-5.4.0.jar;C:\Users\admin\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\admin\.m2\repository\io\cucumber\cucumber-testng\7.18.0\cucumber-testng-7.18.0.jar;C:\Users\admin\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\admin\.m2\repository\io\cucumber\cucumber-core\7.18.0\cucumber-core-7.18.0.jar;C:\Users\admin\.m2\repository\io\cucumber\cucumber-gherkin\7.18.0\cucumber-gherkin-7.18.0.jar;C:\Users\admin\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.18.0\cucumber-gherkin-messages-7.18.0.jar;C:\Users\admin\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\admin\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\admin\.m2\repository\io\cucumber\testng-xml-formatter\0.1.0\testng-xml-formatter-0.1.0.jar;C:\Users\admin\.m2\repository\io\cucumber\query\12.2.0\query-12.2.0.jar;C:\Users\admin\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\admin\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\admin\.m2\repository\io\cucumber\datatable\7.18.0\datatable-7.18.0.jar;C:\Users\admin\.m2\repository\io\cucumber\cucumber-plugin\7.18.0\cucumber-plugin-7.18.0.jar;C:\Users\admin\.m2\repository\io\cucumber\docstring\7.18.0\docstring-7.18.0.jar;C:\Users\admin\.m2\repository\io\cucumber\html-formatter\21.3.1\html-formatter-21.3.1.jar;C:\Users\admin\.m2\repository\io\cucumber\junit-xml-formatter\0.4.0\junit-xml-formatter-0.4.0.jar;C:\Users\admin\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\admin\.m2\repository\io\cucumber\cucumber-java\7.18.0\cucumber-java-7.18.0.jar;C:\Users\admin\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\admin\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\admin\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\admin\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\admin\AppData\Local\Temp\surefire9608112042429931306\surefirebooter-20250903102625361_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\admin\AppData\Local\Temp\surefire16903333041928569734\surefirebooter-20250903113821476_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
@@ -56,7 +56,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="runScenario[&quot;Send a valid Request to get user details&quot;, &quot;Validation of get method&quot;](1)" classname="com.example.runner.CucumberRunnerTests" time="4.063">
+  <testcase name="runScenario[&quot;Send a valid Request to get user details&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](1)" classname="com.example.runner.CucumberRunnerTests" time="3.861">
     <system-out><![CDATA[Status: 200
 Body: {"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}
 ]]></system-out>
@@ -65,12 +65,12 @@ SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 ]]></system-err>
   </testcase>
-  <testcase name="runScenario[&quot;Retrieve a user by valid ID&quot;, &quot;Validation of get method&quot;](2)" classname="com.example.runner.CucumberRunnerTests" time="0.386">
+  <testcase name="runScenario[&quot;Retrieve a user by valid ID&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](2)" classname="com.example.runner.CucumberRunnerTests" time="0.39">
     <system-out><![CDATA[Status: 200
 Body: {"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Retrieve a user with invalid ID&quot;, &quot;Validation of get method&quot;](3)" classname="com.example.runner.CucumberRunnerTests" time="0.463">
+  <testcase name="runScenario[&quot;Retrieve a user with invalid ID&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](3)" classname="com.example.runner.CucumberRunnerTests" time="0.706">
     <system-out><![CDATA[Status: 404
 Body: {}
 Expected Status: 404
@@ -78,51 +78,69 @@ Actual Status: 404
 Response Body: {}
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Create a new user successfully&quot;, &quot;Validation of get method&quot;](4)" classname="com.example.runner.CucumberRunnerTests" time="0.848">
+  <testcase name="runScenario[&quot;Create a new user successfully&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](4)" classname="com.example.runner.CucumberRunnerTests" time="0.951">
     <system-out><![CDATA[Preparing to create user with name: John Doe and job: Software Engineer
 Status: 201
-Response Body: {"name":"John Doe","job":"Software Engineer","id":"60","createdAt":"2025-09-03T04:56:33.293Z"}
-User created successfully with ID: 60
-Created at: 2025-09-03T04:56:33.293Z
+Response Body: {"name":"John Doe","job":"Software Engineer","id":"989","createdAt":"2025-09-03T06:08:29.662Z"}
+User created successfully with ID: 989
+Created at: 2025-09-03T06:08:29.662Z
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Delete user successfully&quot;, &quot;Validation of get method&quot;](5)" classname="com.example.runner.CucumberRunnerTests" time="0.654">
+  <testcase name="runScenario[&quot;Delete user successfully&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](5)" classname="com.example.runner.CucumberRunnerTests" time="0.709">
     <system-out><![CDATA[DELETE Status: 204
 DELETE Response: 
-User deleted successfully
+User deleted successfully with empty body
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Retrieve all users with pagination&quot;, &quot;Validation of get method&quot;](6)" classname="com.example.runner.CucumberRunnerTests" time="0.408">
+  <testcase name="runScenario[&quot;Retrieve all users with pagination&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](6)" classname="com.example.runner.CucumberRunnerTests" time="0.479">
     <system-out><![CDATA[Status: 200
 Page requested: 1
 Users returned: 6
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Retrieve all users with pagination&quot;, &quot;Validation of get method&quot;](7)" classname="com.example.runner.CucumberRunnerTests" time="0.426">
+  <testcase name="runScenario[&quot;Retrieve all users with pagination&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](7)" classname="com.example.runner.CucumberRunnerTests" time="0.348">
     <system-out><![CDATA[Status: 200
 Page requested: 2
 Users returned: 6
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Create a new user with a large payload&quot;, &quot;Validation of get method&quot;](8)" classname="com.example.runner.CucumberRunnerTests" time="0.524">
+  <testcase name="runScenario[&quot;Retrieve a list of unknown resources&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](8)" classname="com.example.runner.CucumberRunnerTests" time="0.469">
+    <system-out><![CDATA[GET Unknown Resources Status: 200
+Response Body: {"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"name":"cerulean","year":2000,"color":"#98B2D1","pantone_value":"15-4020"},{"id":2,"name":"fuchsia rose","year":2001,"color":"#C74375","pantone_value":"17-2031"},{"id":3,"name":"true red","year":2002,"color":"#BF1932","pantone_value":"19-1664"},{"id":4,"name":"aqua sky","year":2003,"color":"#7BC4C4","pantone_value":"14-4811"},{"id":5,"name":"tigerlily","year":2004,"color":"#E2583E","pantone_value":"17-1456"},{"id":6,"name":"blue turquoise","year":2005,"color":"#53B0AE","pantone_value":"15-5217"}],"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}
+Unknown resources list validated successfully.
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Delete a user by ID&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](9)" classname="com.example.runner.CucumberRunnerTests" time="0.488">
+    <system-out><![CDATA[DELETE Status: 204
+DELETE Response: 
+User deleted successfully with empty body
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Retrieve a specific unknown resource by ID&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](10)" classname="com.example.runner.CucumberRunnerTests" time="0.353">
+    <system-out><![CDATA[GET Unknown Resource Status: 200
+Response Body: {"data":{"id":2,"name":"fuchsia rose","year":2001,"color":"#C74375","pantone_value":"17-2031"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}}
+Unknown resource with ID 2 validated successfully.
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Create a new user with a large payload&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](11)" classname="com.example.runner.CucumberRunnerTests" time="0.517">
     <system-out><![CDATA[Preparing large payload user details...
 Large Payload Status: 201
-Created User ID: 901
-Created At: 2025-09-03T04:56:35.404Z
+Created User ID: 183
+Created At: 2025-09-03T06:08:33.152Z
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Update user with partial data&quot;, &quot;Validation of get method&quot;](9)" classname="com.example.runner.CucumberRunnerTests" time="0.532">
+  <testcase name="runScenario[&quot;Update user with partial data&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](12)" classname="com.example.runner.CucumberRunnerTests" time="0.523">
     <system-out><![CDATA[PUT Status: 200
-PUT Response: {"name":"UpdatedName","updatedAt":"2025-09-03T04:56:35.916Z"}
-Updated At: 2025-09-03T04:56:35.916Z
+PUT Response: {"name":"UpdatedName","updatedAt":"2025-09-03T06:08:33.650Z"}
+Updated At: 2025-09-03T06:08:33.650Z
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Delete user with invalid ID&quot;, &quot;Validation of get method&quot;](10)" classname="com.example.runner.CucumberRunnerTests" time="0.662">
+  <testcase name="runScenario[&quot;Delete user with invalid ID&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](13)" classname="com.example.runner.CucumberRunnerTests" time="0.646">
     <system-out><![CDATA[DELETE Invalid ID Status: 204
 DELETE Invalid User ID returned 204 with no content (ReqRes behavior).
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Perform a comprehensive health check&quot;, &quot;Validation of get method&quot;](11)" classname="com.example.runner.CucumberRunnerTests" time="0.947">
+  <testcase name="runScenario[&quot;Perform a comprehensive health check&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](14)" classname="com.example.runner.CucumberRunnerTests" time="1.083">
     <system-out><![CDATA[Health Check - /users : 200
 Health Check - /register : 200
 Health Check - /login : 200
@@ -130,14 +148,25 @@ Health Check - /unknown : 200
 ✅ All endpoints returned 200 with valid responses
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Retrieve an unknown resource with invalid ID&quot;, &quot;Validation of get method&quot;](12)" classname="com.example.runner.CucumberRunnerTests" time="0.437">
-    <system-out><![CDATA[Unknown Resource Status: 404
-Unknown Resource Body: {}
+  <testcase name="runScenario[&quot;Register a new user with valid email and password&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](15)" classname="com.example.runner.CucumberRunnerTests" time="0.669">
+    <system-out><![CDATA[Preparing registration details with email: eve.holt@reqres.in
+Register Status: 200
+Response Body: {"id":4,"token":"QpwL5tke4Pnpja7X4"}
+User registered successfully with token: QpwL5tke4Pnpja7X4
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Retrieve users with delay parameter&quot;, &quot;Validation of get method&quot;](13)" classname="com.example.runner.CucumberRunnerTests" time="3.577">
-    <system-out><![CDATA[Delayed Response Time (ms): 3517
-Users count: 6
+  <testcase name="runScenario[&quot;Attempt to register a user with missing or invalid email/password&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](16)" classname="com.example.runner.CucumberRunnerTests" time="0.698">
+    <system-out><![CDATA[Preparing invalid registration details (missing or invalid email/password)...
+Invalid Register Status: 400
+Response Body: {"error":"Missing email or username"}
+Error message for invalid registration: Missing email or username
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Login a user with valid credentials&quot;, &quot;Validation of API endpoints for ReqRes demo&quot;](17)" classname="com.example.runner.CucumberRunnerTests" time="0.475">
+    <system-out><![CDATA[Preparing login details with email: eve.holt@reqres.in
+Login Status: 200
+Response Body: {"token":"QpwL5tke4Pnpja7X4"}
+Login successful with token: QpwL5tke4Pnpja7X4
 ]]></system-out>
   </testcase>
 </testsuite>

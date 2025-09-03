@@ -1,4 +1,4 @@
-Feature: Validation of get method
+Feature: Validation of API endpoints for ReqRes demo
 
   @GetUserDetails
   Scenario Outline: Send a valid Request to get user details
@@ -26,7 +26,7 @@ Feature: Validation of get method
     Examples:
       | statusCode | id   |
       | 404        | 9999 |
-
+    
   @CreateUser
   Scenario: Create a new user successfully
     Given I have user details with name "John Doe" and job "Software Engineer"
@@ -42,7 +42,7 @@ Feature: Validation of get method
     Examples:
       | userId | statusCode |
       | 2      | 204        |
-
+  
   @GetAllUsers
   Scenario Outline: Retrieve all users with pagination
     Given I send a GET request to retrieve all users on page <page>
@@ -53,7 +53,31 @@ Feature: Validation of get method
       | 1    | 200        | 6            |
       | 2    | 200        | 6            |
 
-  @CreateUserLargePayload
+
+  @GetUnknownResources
+  Scenario: Retrieve a list of unknown resources
+    Given I send a GET request to retrieve unknown resources
+    Then the response should return status 200 and contain a list of unknown resources
+
+  @DeleteUserById
+  Scenario Outline: Delete a user by ID
+    Given I send a DELETE request for user id <userId>
+    Then the user should be deleted successfully with status <statusCode>
+
+    Examples:
+      | userId | statusCode |
+      | 3      | 204        |
+
+  @GetUnknownResourceById
+Scenario Outline: Retrieve a specific unknown resource by ID
+  Given I send a GET request to retrieve unknown resource with id <resourceId>
+  Then the response should return status <statusCode> and contain the details of the unknown resource with id <resourceId>
+
+  Examples:
+    | resourceId | statusCode |
+    | 2          | 200        |
+
+    @CreateUserLargePayload
   Scenario: Create a new user with a large payload
     Given I have user details with large name and job
     When I send a POST request to create the user with large payload
@@ -67,10 +91,10 @@ Feature: Validation of get method
     And the response should contain the updated user name and updatedAt timestamp
 
   @DeleteUserInvalidId
-  Scenario: Delete user with invalid ID
-    Given I send a DELETE request for invalid user id 9999
-    Then the response status should be 204
-    And the response should indicate no content returned
+Scenario: Delete user with invalid ID
+  Given I send a DELETE request for invalid user id 9999
+  Then the response status should be 204
+  And the response should indicate no content returned
 
 
   @HealthCheck
@@ -78,16 +102,27 @@ Feature: Validation of get method
     Given I perform a health check on all endpoints
     Then all endpoints should return status 200 with valid responses
 
-  @GetUnknownInvalidId
-  Scenario: Retrieve an unknown resource with invalid ID
-    Given I send a GET request to retrieve unknown resource with id 9999
-    Then the response status should be 404
-    And the response body should be empty
+    @RegisterUser
+  Scenario: Register a new user with valid email and password
+    Given I have registration details with email "eve.holt@reqres.in" and password "pistol"
+    When I send a POST request to register the user
+    Then the registration response status should be 200
+    And the response should contain a token
+ 
+   @RegisterUserInvalid
+  Scenario: Attempt to register a user with missing or invalid email/password
+    Given I have registration details with missing or invalid email or password
+    When I send a POST request to register the user with invalid data
+    Then the registration response status should be 400 for invalid data
+    And the response should indicate missing email or password
 
-  @GetUsersWithDelay
-  Scenario: Retrieve users with delay parameter
-    Given I send a GET request to retrieve users with delay of 3 seconds
-    Then the response status should be 200
-    And the response should be delayed by approximately 3 seconds
-    And the response should contain a list of users
+
+  @LoginUser
+  Scenario: Login a user with valid credentials
+    Given I have login details with email "eve.holt@reqres.in" and password "cityslicka"
+    When I send a POST request to login the user
+    Then the login response status should be 200
+    And the login response should contain a token
+
+
 
