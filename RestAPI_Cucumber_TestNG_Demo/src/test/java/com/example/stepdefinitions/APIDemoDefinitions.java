@@ -9,6 +9,7 @@ import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import static io.restassured.RestAssured.given;
 import io.restassured.response.Response;
 
@@ -173,6 +174,117 @@ public class APIDemoDefinitions {
     
     System.out.println("Users returned: " + response.jsonPath().getList("data").size());
 }
+
+// --- (existing code above remains unchanged) ---
+
+    // Scenario 17: Create User with Large Payload
+    @Given("I have user details with large name and job")
+    public void i_have_user_details_with_large_name_and_job() {
+        System.out.println("Preparing large payload user details...");
+    }
+
+    @When("I send a POST request to create the user with large payload")
+    public void i_send_post_request_to_create_user_with_large_payload() {
+        String largeName = "John".repeat(100);  // very long string
+        String largeJob = "Engineer".repeat(100);
+
+        String requestBody = "{\n" +
+                "    \"name\": \"" + largeName + "\",\n" +
+                "    \"job\": \"" + largeJob + "\"\n" +
+                "}";
+
+        response = given()
+                .header("Accept", "application/json")
+                .header("Content-Type", "application/json")
+                .header("x-api-key", API_KEY)
+                .body(requestBody)
+                .when()
+                .post(BASE_URL + "/users");
+
+        System.out.println("Large Payload Status: " + response.getStatusCode());
+    }
+
+    @Then("the response should contain the created user details with large payload")
+    public void verify_created_user_details_large_payload() {
+        response.then()
+                .body("id", notNullValue())
+                .body("createdAt", notNullValue());
+
+        System.out.println("Created User ID: " + response.jsonPath().getString("id"));
+        System.out.println("Created At: " + response.jsonPath().getString("createdAt"));
+    }
+
+    // Scenario 18: PUT Partial Update
+    @Given("I send a PUT request to update user id {int} with name only")
+    public void i_send_put_request_to_update_user_with_name_only(int id) {
+        String requestBody = "{\n" +
+                "    \"name\": \"UpdatedName\"\n" +
+                "}";
+
+        response = given()
+                .header("Accept", "application/json")
+                .header("Content-Type", "application/json")
+                .header("x-api-key", API_KEY)
+                .body(requestBody)
+                .when()
+                .put(BASE_URL + "/users/" + id);
+
+        System.out.println("PUT Status: " + response.getStatusCode());
+        System.out.println("PUT Response: " + response.getBody().asString());
+    }
+
+    @Then("the response should contain the updated user name and updatedAt timestamp")
+    public void verify_updated_user_partial() {
+        response.then()
+                .body("name", equalTo("UpdatedName"))
+                .body("updatedAt", notNullValue());
+
+        System.out.println("Updated At: " + response.jsonPath().getString("updatedAt"));
+    }
+
+    // Scenario 19: DELETE with Invalid ID
+    @Given("I send a DELETE request for invalid user id {int}")
+    public void i_send_delete_request_for_invalid_user(int userId) {
+        response = given()
+                .header("Accept", "application/json")
+                .header("x-api-key", API_KEY)
+                .when()
+                .delete(BASE_URL + "/users/" + userId);
+
+        System.out.println("DELETE Invalid ID Status: " + response.getStatusCode());
+    }
+    @Then("the response should indicate no content returned")
+    public void verify_user_invalid_delete_behavior() {
+        int actualStatus = response.getStatusCode();
+        Assert.assertEquals(actualStatus, 204, "Expected 204 for invalid user deletion");
+        
+        String body = response.getBody().asString().trim();
+        Assert.assertTrue(body.isEmpty(), "Expected empty body for invalid delete");
+        System.out.println("DELETE Invalid User ID returned 204 with no content (ReqRes behavior).");
+}
+
+    // Scenario 20: Health Check
+    @Given("I perform a health check on all endpoints")
+    public void i_perform_health_check_on_all_endpoints() {
+        String[] endpoints = {"/users", "/register", "/login", "/unknown"};
+
+        for (String endpoint : endpoints) {
+            Response resp = given()
+                    .header("Accept", "application/json")
+                    .header("x-api-key", API_KEY)
+                    .when()
+                    .get(BASE_URL + endpoint);
+
+            System.out.println("Health Check - " + endpoint + " : " + resp.getStatusCode());
+            Assert.assertEquals(resp.getStatusCode(), 200, "Health check failed for " + endpoint);
+        }
+    }
+
+    @Then("all endpoints should return status 200 with valid responses")
+    public void verify_health_check_responses() {
+        System.out.println("✅ All endpoints returned 200 with valid responses");
+    }
+
 
 
 

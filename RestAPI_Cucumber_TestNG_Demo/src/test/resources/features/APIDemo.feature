@@ -26,7 +26,7 @@ Feature: Validation of get method
     Examples:
       | statusCode | id   |
       | 404        | 9999 |
-    
+
   @CreateUser
   Scenario: Create a new user successfully
     Given I have user details with name "John Doe" and job "Software Engineer"
@@ -42,13 +42,38 @@ Feature: Validation of get method
     Examples:
       | userId | statusCode |
       | 2      | 204        |
-  
+
   @GetAllUsers
   Scenario Outline: Retrieve all users with pagination
     Given I send a GET request to retrieve all users on page <page>
     Then the response should return status <statusCode> and contain <usersPerPage> users per page
     
     Examples:
-    | page | statusCode | usersPerPage |
-    | 1    | 200        | 6            |
-    | 2    | 200        | 6            |
+      | page | statusCode | usersPerPage |
+      | 1    | 200        | 6            |
+      | 2    | 200        | 6            |
+
+  @CreateUserLargePayload
+  Scenario: Create a new user with a large payload
+    Given I have user details with large name and job
+    When I send a POST request to create the user with large payload
+    Then the response status should be 201
+    And the response should contain the created user details with large payload
+
+  @UpdateUserPartial
+  Scenario: Update user with partial data
+    Given I send a PUT request to update user id 2 with name only
+    Then the response status should be 200
+    And the response should contain the updated user name and updatedAt timestamp
+
+  @DeleteUserInvalidId
+  Scenario: Delete user with invalid ID
+    Given I send a DELETE request for invalid user id 9999
+    Then the response status should be 204
+    And the response should indicate no content returned
+
+
+  @HealthCheck
+  Scenario: Perform a comprehensive health check
+    Given I perform a health check on all endpoints
+    Then all endpoints should return status 200 with valid responses
