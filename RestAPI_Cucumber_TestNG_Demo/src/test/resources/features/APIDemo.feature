@@ -77,3 +77,17 @@ Feature: Validation of get method
   Scenario: Perform a comprehensive health check
     Given I perform a health check on all endpoints
     Then all endpoints should return status 200 with valid responses
+
+  @GetUnknownInvalidId
+  Scenario: Retrieve an unknown resource with invalid ID
+    Given I send a GET request to retrieve unknown resource with id 9999
+    Then the response status should be 404
+    And the response body should be empty
+
+  @GetUsersWithDelay
+  Scenario: Retrieve users with delay parameter
+    Given I send a GET request to retrieve users with delay of 3 seconds
+    Then the response status should be 200
+    And the response should be delayed by approximately 3 seconds
+    And the response should contain a list of users
+

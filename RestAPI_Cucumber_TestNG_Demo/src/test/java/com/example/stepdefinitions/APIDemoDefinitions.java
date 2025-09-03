@@ -176,6 +176,62 @@ public class APIDemoDefinitions {
 }
 
 // --- (existing code above remains unchanged) ---
+         // Scenario 15: GET unknown/{id} with invalid ID
+    @Given("I send a GET request to retrieve unknown resource with id {int}")
+    public void i_send_get_request_to_retrieve_unknown_with_id(int id) {
+        response = given()
+                .header("Accept", "application/json")
+                .header("x-api-key", API_KEY)
+                .when()
+                .get(BASE_URL + "/unknown/" + id);
+
+        System.out.println("Unknown Resource Status: " + response.getStatusCode());
+        System.out.println("Unknown Resource Body: " + response.getBody().asString());
+    }
+
+    @Then("the response body should be empty")
+    public void verify_response_body_empty() {
+        String body = response.getBody().asString().trim();
+        Assert.assertTrue(body.equals("{}") || body.isEmpty(),
+                "Expected empty body but got: " + body);
+    }
+
+    // Scenario 16: GET users with delay
+    private long requestStartTime;
+
+    @Given("I send a GET request to retrieve users with delay of {int} seconds")
+    public void i_send_get_request_with_delay(int delaySeconds) {
+        requestStartTime = System.currentTimeMillis();
+
+        response = given()
+                .header("Accept", "application/json")
+                .header("x-api-key", API_KEY)
+                .queryParam("delay", delaySeconds)
+                .when()
+                .get(BASE_URL + "/users");
+
+        long elapsed = System.currentTimeMillis() - requestStartTime;
+        System.out.println("Delayed Response Time (ms): " + elapsed);
+    }
+
+    @Then("the response should be delayed by approximately {int} seconds")
+    public void verify_response_delay(int expectedDelaySeconds) {
+        long elapsed = System.currentTimeMillis() - requestStartTime;
+        long expectedMs = expectedDelaySeconds * 1000L;
+
+        Assert.assertTrue(elapsed >= expectedMs,
+                "Expected at least " + expectedMs + " ms delay but got " + elapsed + " ms");
+    }
+
+    @Then("the response should contain a list of users")
+    public void verify_response_contains_list_of_users() {
+        response.then()
+                .body("data", not(empty()))
+                .body("data.size()", greaterThan(0));
+
+        System.out.println("Users count: " + response.jsonPath().getList("data").size());
+    }
+
 
     // Scenario 17: Create User with Large Payload
     @Given("I have user details with large name and job")
